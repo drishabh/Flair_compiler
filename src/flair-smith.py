@@ -6,8 +6,6 @@ from flr_parser import NonTerminal
 class Flair_Smith:
     def __init__(self):
 
-
-
         self.parse_table = {
             ( NonTerminal.PROGRAM , TokenType.PROGRAM ) : [TokenType.PROGRAM,TokenType.IDENTIFIER,TokenType.LEFT_PAREN,
                                                            NonTerminal.FORMALS,TokenType.RIGHT_PAREN,
