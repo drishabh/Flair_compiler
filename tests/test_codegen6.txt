@@ -1,0 +1,5 @@
+program factors( n : integer );
+    begin
+      return 1+2
+        
+    end.

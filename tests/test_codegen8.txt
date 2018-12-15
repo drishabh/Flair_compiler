@@ -1,0 +1,5 @@
+program factors( n : integer );
+    begin
+      return if n < 5 then true else false
+        
+    end.

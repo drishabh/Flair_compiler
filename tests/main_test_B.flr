@@ -1,0 +1,8 @@
+program test_import_B(a:integer);
+
+  function functionB(n:integer): integer
+  begin return 3*n end;
+
+begin
+  return functionB(a)
+end.

@@ -1,0 +1,17 @@
+program convert_to_12 (hr : integer, min: integer) ;
+
+    function convert_hr ( h:integer ) : integer
+
+        begin
+            return if h < 12 then
+					if h = 0 then 12
+							 else h
+                    else h - 12
+					
+	end;
+	
+begin
+        print( convert_hr(hr) );
+        return min
+	   	
+end.

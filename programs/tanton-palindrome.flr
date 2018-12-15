@@ -1,0 +1,129 @@
+program tanton_palindromes(n : integer);
+
+  { function from the Flair library }
+
+  function MOD(m : integer, n : integer) : integer
+  begin
+    return m - n*(m/n)
+  end;
+
+  { the main function -- n is binary }
+
+  function is_tanton_palindrome(n : integer): boolean
+  begin
+    print(n);
+    return if is_palindrome(n)       { could be an or expression }
+              then true
+              else is_tanton_palindrome( add_boolean(n, reverse(n)) )
+  end;
+
+  { functions dealing with numbers as sequences as digits }
+
+  function is_palindrome(n : integer) : boolean
+  begin
+    return n = reverse(n)
+  end;
+
+  function reverse(n : integer) : integer
+  begin
+    return reverseL(n, 0)
+  end;
+
+  function reverseL(n : integer, nR : integer) : integer
+  begin
+    return if n = 0
+              then nR
+              else reverseL(n / 10, 10 * nR + MOD(n, 10))
+   end;
+
+  { functions dealing with numbers in bases 2 and 10 }
+
+  function binary_for(n : integer): integer
+  begin
+    return if n < 2
+              then n
+              else 10 * binary_for(n / 2) + MOD(n, 2)
+  end;
+
+  function decimal_for(n : integer): integer
+  begin
+    return if n < 10
+              then n
+              else 2 * decimal_for(n / 10) + MOD(n, 10)
+  end;
+
+  function add_boolean(m : integer, n : integer) : integer
+  begin
+    return binary_for(decimal_for(m) + decimal_for(n))
+  end;
+
+{ the main program converts n to binary
+  and calls the function that does the work }
+
+begin
+  print(binary_for(n));
+  return is_tanton_palindrome(binary_for(n))
+end.program tanton_palindromes(n : integer);
+
+  { function from the Flair library }
+
+  function MOD(m : integer, n : integer) : integer
+  begin
+    return m - n*(m/n)
+  end;
+
+  { the main function -- n is binary }
+
+  function is_tanton_palindrome(n : integer): boolean
+  begin
+    return if is_palindrome(n)       { could be an or expression }
+              then true
+              else is_tanton_palindrome( add_boolean(n, reverse(n)) )
+  end;
+
+  { functions dealing with numbers as sequences as digits }
+
+  function is_palindrome(n : integer) : boolean
+  begin
+    return n = reverse(n)
+  end;
+
+  function reverse(n : integer) : integer
+  begin
+    return reverseL(n, 0)
+  end;
+
+  function reverseL(n : integer, nR : integer) : integer
+  begin
+    return if n = 0
+              then nR
+              else reverseL(n / 10, 10 * nR + MOD(n, 10))
+   end;
+
+  { functions dealing with numbers in bases 2 and 10 }
+
+  function binary_for(n : integer): integer
+  begin
+    return if n < 2
+              then n
+              else 10 * binary_for(n / 2) + MOD(n, 2)
+  end;
+
+  function decimal_for(n : integer): integer
+  begin
+    return if n < 10
+              then n
+              else 2 * decimal_for(n / 10) + MOD(n, 10)
+  end;
+
+  function add_boolean(m : integer, n : integer) : integer
+  begin
+    return binary_for(decimal_for(m) + decimal_for(n))
+  end;
+
+{ the main program converts n to binary
+  and calls the function that does the work }
+
+begin
+  return is_tanton_palindrome(binary_for(n))
+end.

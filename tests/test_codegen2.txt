@@ -1,0 +1,8 @@
+program modulus(a:integer);
+    function f(n:integer) : integer
+        begin return n+3 end;
+
+begin
+  return if a < 10 then f(2*a)
+                  else f(a)
+end.

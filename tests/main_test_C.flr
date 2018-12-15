@@ -1,0 +1,8 @@
+program test_import_C(a:integer);
+
+  function functionC(n:integer): integer
+  begin return 4*n end;
+
+begin
+  return functionC(a)
+end.

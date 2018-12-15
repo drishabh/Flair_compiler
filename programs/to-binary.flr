@@ -1,0 +1,17 @@
+program to_binary(n : integer);
+
+  function MOD(m : integer, n : integer) : integer
+  begin
+    return m - n*(m/n)
+  end;
+
+  function binary_for(n : integer): integer
+  begin
+    return if n < 2
+              then n
+              else 10 * binary_for(n / 2) + MOD(n, 2)
+  end;
+
+begin
+  return binary_for(n)
+end.

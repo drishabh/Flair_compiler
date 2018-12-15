@@ -1,0 +1,14 @@
+include main_test_B;
+include main_test_C;
+
+program test_import_A(a:integer);
+
+  function functionA(n:integer): integer
+  begin return 2*n end;
+
+begin
+  return functionA(a) + functionB(a) + test_import_C(a)
+end.
+
+
+  

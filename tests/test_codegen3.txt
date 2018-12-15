@@ -1,0 +1,9 @@
+program modulus(a:integer);
+    function f(n:integer) : boolean
+        begin return if n < 5 then true
+                             else false end;
+
+begin
+  return if a < 10 then f(2*a)
+                  else f(a)
+end.

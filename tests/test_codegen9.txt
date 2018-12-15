@@ -1,0 +1,4 @@
+program factors( n : integer );
+    begin
+      return not true
+    end.
