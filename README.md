@@ -19,7 +19,7 @@ Features:
  
  3) Import is enabled now. The syntax is defined in the grammar and
     some test cases (main_test_A.flr)  portray the correct semantics.
-    Import enables the user to imort the main function and all the definitions. **NEW**
+    Import enables the user to import the main function and all the definitions. **NEW**
 
 Currently working on:
 	- Choosing register for code gen using 'get register' and
