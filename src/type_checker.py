@@ -52,7 +52,7 @@ class TypeChecker:
     
     #print(self.called_identifiers)
     self._ast.setType(self.symbol_table[fnName][-1])
-    print("AST", self._ast)
+    #print("AST", self._ast)
     return self.errors
       
   ##----------------------------------------------------------------------
