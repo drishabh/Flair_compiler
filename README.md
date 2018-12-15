@@ -16,10 +16,10 @@ Behind the scenes:
 Features: 
  1) Tail recursion implemented.
  2) Proper error messages for parser.
- **NEW**
+ 
  3) Import is enabled now. The syntax is defined in the grammar and
     some test cases (main_test_A.flr)  portray the correct semantics.
-    Import enables the user to imort the main function and all the definitions.
+    Import enables the user to imort the main function and all the definitions. **NEW**
 
 Currently working on:
 	- Choosing register for code gen using 'get register' and
