@@ -1,4 +1,5 @@
 from flr_ast import *
+from error import FileNotFound
 
 class Preprocess:
     def __init__(self, string):
@@ -13,14 +14,14 @@ class Preprocess:
             j = string[i].split()
             if j[0] == 'include':
                 if len(j) > 2:
-                    raise ImportError('Import statement:', ''.join(j) + ';', \
+                    raise FileNotFound('Import statement:', ''.join(j) + ';', \
                                       'incorrect')
                 else:
                     imports.append(j[1])
             elif j[0] == 'program':
                 program = ';'.join(string[i:])
-                print("Returning imports", imports)
-                print("Returning program", program)
+                #print("Returning imports", imports)
+                #print("Returning program", program)
                 return  program, imports
 
     def combine_ast(self, lst):
@@ -34,7 +35,7 @@ class Preprocess:
                 definitions = i.definitions().value()
                 for j in definitions:
                     main_ast.addDefinition(j)
-                print(1)
+                #print(1)
                 fn_name = i.identifier()
                 formals = i.formals()
                 type = '_none'
