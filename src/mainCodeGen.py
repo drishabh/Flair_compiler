@@ -79,5 +79,7 @@ except ParseError as pe:
     print('Parse error: ' + str(pe))
 except SemanticError as se:
     print('Semantic error: ' + str(se))
+except FileNotFound as fnf:
+    print('Import error: ' + str(fnf))
 except Exception as exc:
     print('Something went wrong: ' + str(exc))
